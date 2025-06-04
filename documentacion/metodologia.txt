@@ -2,16 +2,38 @@ Fecha: [fecha]
 Experimento: Comparación SMA vs. modelo tradicional
 Entorno: Java, JADE, Visual Studio Code
 
-Sistema 1: Monolítico centralizado (tradicional)
-Sistema 2: Multiagente (JADE)
+Objetivo:
+- Comparar la eficiencia y desempeño entre un sistema monolítico tradicional y un sistema multiagente (SMA) usando el mismo conjunto de datos y métricas.
 
-Ejecución de prueba:
-- tradicional: java AnalizadorTradicional > resultados_tradicional.csv
-- sma: java -cp .;jade.jar MainAgente > resultados_sma.csv
+Descripción de los datos:
+- Datos sintéticos generados con Python (`generar_datos.py`), con [N] registros y 10 columnas de valores por registro.
+
+Sistemas evaluados:
+- Sistema 1: Monolítico centralizado (tradicional, Java puro)
+- Sistema 2: Multiagente (JADE, Java)
+
+Procedimiento experimental:
+- Se ejecuta cada sistema varias veces (al menos 10 repeticiones) para obtener promedios y reducir el efecto de variabilidad.
+- tradicional: `java AnalizadorTradicional > resultados_tradicional.csv`
+- sma: `java -cp .;jade.jar MainAgente > resultados_sma.csv`
 
 Métricas recolectadas:
-- Tiempo de ejecución (ms)
-- Tasa de éxito de ejecución
+- Tiempo de ejecución (ms): Medido desde el inicio hasta el final del procesamiento de datos.
+- Tasa de éxito de ejecución: Porcentaje de registros procesados correctamente respecto al total esperado.
+- Suma total de los valores procesados (para validar equivalencia funcional).
+- Throughput: registros procesados por milisegundo.
+
+Criterios de comparación:
+- Se considera que el SMA es más eficiente si el tiempo de ejecución es al menos 25% menor que el tradicional.
+- Se verifica que la suma total y el número de registros procesados sean iguales en ambos sistemas.
+
+Herramientas utilizadas:
+- Java 8+
+- JADE 4.5.0
+- Visual Studio Code
+- Python (para generación de datos y análisis)
+- Excel o Google Sheets (para análisis y gráficos)
 
 Notas:
 - Incluye capturas de VS Code, consola, código fuente y gráficos.
+- Los resultados y scripts de análisis se encuentran en la carpeta `/datos` y `/documentacion`.
