@@ -1,0 +1,17 @@
+Fecha: [fecha]
+Experimento: Comparación SMA vs. modelo tradicional
+Entorno: Java, JADE, Visual Studio Code
+
+Sistema 1: Monolítico centralizado (tradicional)
+Sistema 2: Multiagente (JADE)
+
+Ejecución de prueba:
+- tradicional: java AnalizadorTradicional > resultados_tradicional.csv
+- sma: java -cp .;jade.jar MainAgente > resultados_sma.csv
+
+Métricas recolectadas:
+- Tiempo de ejecución (ms)
+- Tasa de éxito de ejecución
+
+Notas:
+- Incluye capturas de VS Code, consola, código fuente y gráficos.
